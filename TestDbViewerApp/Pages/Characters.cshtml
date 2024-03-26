@@ -1,0 +1,30 @@
+﻿@page
+@model CharactersModel
+@{
+    ViewData["Title"] = "Character List";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>In this page we show the list of characters pulled from the database.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Species</th>
+            <th>Image</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entity in Model.Characters)
+        {
+            <tr>
+                <td>@entity.Name</td>
+                <td>@entity.Species</td>
+                <td>@entity.Image</td>
+                <td>@entity.Id</td>
+            </tr>
+        }
+    </tbody>
+</table>
